@@ -3,8 +3,8 @@ import java.util.Scanner;
 public class Array {
     private int N; 
     private int[] a;
-    public static Scanner sc= new Scanner(System.in);
     public void InputData(){
+        Scanner sc= new Scanner(System.in);
         System.out.println("nhap n: ");
         N= sc.nextInt(); 
         a= new int[N];
