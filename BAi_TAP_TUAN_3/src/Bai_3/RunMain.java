@@ -12,7 +12,7 @@ public class RunMain {
 
               DoanXinhGai.Load(random.nextInt(10)+1);
             DoanXinhGai.Shoot(random.nextInt(10)+1);
-            System.out.println(DiepBeDe.getAmmoNumber() +"  "+ DoanXinhGai.getAmmoNumber());
+          //  System.out.println(DiepBeDe.getAmmoNumber() +"  "+ DoanXinhGai.getAmmoNumber());
            // System.out.println(x1);
             if(DiepBeDe.getAmmoNumber()<=0 && DoanXinhGai.getAmmoNumber()<=0){
                 System.out.println("Ca hai cung het dan");
