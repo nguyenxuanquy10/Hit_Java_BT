@@ -1,32 +1,32 @@
 package Bai_3;
 import java.lang.Math; 
+import java.util.Random;
 public class RunMain {
     public static void main(String[] args) {
-        Guns DiepBeDe=new Guns("ShotGun"); 
-        Guns DoanXinhGai= new Guns("ShotGun"); 
+        Guns DiepBeDe=new Guns(100,"ShotGun"); 
+        Guns DoanXinhGai= new Guns(100,"ShotGun"); 
+        Random random= new Random();
         while(true){
-            double x01=Math.random(); 
-            double x02=Math.random(); 
-            x01=x01*10+1; 
-            x02=x02*10+1; 
-            int x1=(int)x01;
-            int x2=(int)x02;
+            DiepBeDe.Load(random.nextInt(10)+1);
+            DiepBeDe.Shoot(random.nextInt(10)+1);
+
+              DoanXinhGai.Load(random.nextInt(10)+1);
+            DoanXinhGai.Shoot(random.nextInt(10)+1);
+          //  System.out.println(DiepBeDe.getAmmoNumber() +"  "+ DoanXinhGai.getAmmoNumber());
            // System.out.println(x1);
-            if(DiepBeDe.getAmmoNumber()<=x1 && DoanXinhGai.getAmmoNumber()<=x2){
+            if(DiepBeDe.getAmmoNumber()<=0 && DoanXinhGai.getAmmoNumber()<=0){
                 System.out.println("Ca hai cung het dan");
                 break;
             }
-            else if(DiepBeDe.getAmmoNumber()<=x1){
+            else if(DiepBeDe.getAmmoNumber()<=0){
                 System.out.println("DiepBeDe thua");
                 break;
             }
-            else if(DoanXinhGai.getAmmoNumber()<=x2){
+            else if(DoanXinhGai.getAmmoNumber()<=0){
                 System.out.println("DoanXinhGai thua");
                 break;
             }
-            DiepBeDe.Shoot(x1);
-            DoanXinhGai.Shoot(x2);
-          
+
         }
 
     }

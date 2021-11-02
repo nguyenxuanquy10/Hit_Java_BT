@@ -1,7 +1,7 @@
 package Bai_3;
 
 public class Guns {
-    private int ammoNumber=100;
+    private int ammoNumber;
     private String weaponName; 
     public void Load(int x){
           this.ammoNumber=this.ammoNumber+x; 
@@ -10,18 +10,19 @@ public class Guns {
         if(this.ammoNumber>=x){
             this.ammoNumber=this.ammoNumber-x; 
         }
-        else{
-            System.out.println("het dan");
-        }
+        else this.ammoNumber=0; 
+         
     }
 
     public Guns() {
     }
 
-    public Guns( String weaponName) {
-      
+
+    public Guns(int ammoNumber, String weaponName) {
+        this.ammoNumber = ammoNumber;
         this.weaponName = weaponName;
     }
+  
 
 
     public int getAmmoNumber() {
@@ -41,3 +42,4 @@ public class Guns {
     }
     
 }
+
