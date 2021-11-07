@@ -41,6 +41,6 @@ public class RunMain {
         System.out.println(isPrime(3.0f)); 
         System.out.println(isPrime(20.0f)); 
         System.out.println(isPrime(19.123)); 
-        System.out.println(isPrime((double)20.00)); 
+        System.out.println(isPrime(20.00)); 
     }
 }
