@@ -1,0 +1,8 @@
+Nguyen Van A-18-HaNoi-Nam-0979379081-001202022912-2020606494-Thieu:2000-T2:Toan/T3:TheChat/T4:TiengAnh-ChuaCoLichThi-9.0-Kheo-2-KhongPhaiF
+Nguyen Van B-19-HoaBinh-Nu-0979379083-001202022812-2020606480-Du-T2:Toan/T5:TheChat/T7:TiengAnh-18/9/2020:ThiToan/18/10/2020:ThiAnh-6.5-Om-1-F1
+Nguyen Van C-20-NamDinh-Nu-0979379082-001202022822-2020606578-Thieu:1000-T2:NhapMonLapTrinh/T5:TheChat/T7:TiengAnh-22/9/2020:ThiTheChat-5.0-Kheo-0-KhongPhaiF
+Nguyen Van D-18-HaNoi-Nam-0979379088-001202022012-2020606404-Thieu:1050-T3:TiengAnh/T6:LichSuDang/T7:Triet-18/10/2020:ThiToanCaoCap-4.0-SoMui-3-F2
+Nguyen Van E-19-HaNam-Nu-0979379086-001202022864-2020606414-Du-T2:Toan/T3:TheChat/T4:TiengAnh-28/9/2020:ChuaCoLichThi-3.0-Sot-1-F0
+Nguyen Van F-19-HaiDuong-Nu-0979379085-001202022911-2020606124-Du-T2:HinhHoc/T3:ToanCaoCap/T4:ToanDaiCuong-18/9/2020:ThiAnh-8.0-Tot-2-KhongPhaiF
+Nguyen Van G-18-NgheAn-Nam-0979379084-001202022850-2020606544-Thieu:5000-T2:TheChat/T3:TheChat/T4:TiengAnh-11/8/2020:ThiTheChat-7.6-Om-2-F2
+Nguyen Van H-20-LangSon-Nam-0979379089-001202022919-2020606334-Du-T2:Toan/T3:TheChat/T4:TiengAnh-12/9/2020:ChuaCoLichThi-5.5-Tot-1-KhongPhaiF

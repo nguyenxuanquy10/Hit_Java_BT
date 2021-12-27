@@ -1,0 +1,48 @@
+1. đăng nhập tài khoản , - capcha 
+2. khao báo y tế 
+3. thêm thong tin sinh vien (tu file or nhap): nhap thong tin cho hoc sinh moi
+4. xuat thong tin tu file 
+5. tim kiem sinh vien theo ma sinh vien 
+, tim kiem thong tin sinh vien theo lop, 
+, tim kiem thong tin sinh vien theo tuoi
+tim kiem sinh vien loai gioi , 
+tim kiem sinh vien thi lai(yeu) 
+tim kiem sinh vien nhap hoc bong(gioi)
+.....
+6.theo doi thoi khoa bieu sinh vien 
+7. theo doi lich thi sinh vien
+8. theo doi ket qua hoc tap sinh vien 
+9. kiem tra thong tin hoc phan cua sinhv ien
+10.theo doi tai chinh cua sinh vien 
+10.tim kiemthong thin f
+ 11. tim kiem hoc sinh chua dong hoc phi
+----lop cho sinh vien 
+-----khai bao y te 
+-----kiem tra thong tin ca nha
+/* get set thong tin co ban , get set ho ten , thong tin y te, 
+
+xay dung class: lop PERSON(ten , tuoi , dia chi , gioi tinh,so dien thoat lien he , so chung minh thu nhan dan  ; 
+lop SINHVIEN(ID,Ting trang hoc tap, thoi khoa biei,(hoc phan) tai chinh ,(khao bao y te), hoc truc tuyen, thi Online  ),
+cay dung lop quan ly sinh vien 
+----------sinh vien 
+thay doi 
+sinh vien :
+  System.out.println("1.Thay Doi Thong Tin");
+                          System.out.println("1.Thay Doi Tinh Trang Suc Kheo: ");
+        System.out.println("1.2.Thay Doi So Mui Vacci Da Tiem: ");
+        System.out.println("3.Thay Doi F: ");
+        System.out.println("4.Thay Doi Ho Ten: ");
+        System.out.println("5.Thay Doi Tuoi: ");
+        System.out.println("6.Thay Doi Dia Chi: ");
+        System.out.println("7.Thay Doi Gioi Tinh: ");
+        System.out.println("8.Thay Doi SDT: ");
+        System.out.println("9.Thay Doi So CMT: ");
+        System.out.println("10.Thay Doi Tinh Trang Tai Chinh: ");
+        System.out.println("1.11.Thoat Chuong Trinh: ");
+  System.out.println("2.Kiem Tra Lich Hoc");
+  System.out.println("3.Kiem Tra Lich Thi");
+  System.out.println("4.Dong Hoc");
+  System.out.println("5.Kiem Tra GPA");
+  System.out.println("6.Khai Bao Y Te");
+  System.out.println("7.Xem Thong Tin");
+  System.out.println("8.Thoat Chuong Trinh");
