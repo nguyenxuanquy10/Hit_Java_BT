@@ -1,17 +1,9 @@
 package BTL_JAVA;
 
-import java.security.Provider;
-import java.util.Scanner;
+import java.io.IOException;
 
-// private String Id;
-// private String TinhTrangTaiChinh;
-// private String LichHoc;
-// private String LichThi;
-// private double GPA;
-// private String TinhTrangSucKheo;
-// private String SoMuiVaccin;
-// private String F;
-public class SinhVien extends Nguoi implements Regex_taikhoan{
+import java.util.Scanner;
+public class SinhVien extends Nguoi implements Regex_taikhoan {
     private String Id;
     private String Matkhau;
     private String TinhTrangTaiChinh;
@@ -22,34 +14,38 @@ public class SinhVien extends Nguoi implements Regex_taikhoan{
     private String SoMuiVaccin;
     private String F;
 
+    // constructor khong doi
     public SinhVien() {
 
     }
 
-    // public SinhVien(String HoTen, String Tuoi, String DiaChi, String GioiTinh,
-    // String SDT, String SoCMT, String Id, String TinhTrangTaiChinh,
-    // String LichHoc, String LichThi, double GPA,
-    // String TinhTrangSucKheo, String SoMuiVaccin, String F)
-    public SinhVien( String Id, String Matkhau,String HoTen,String Tuoi, String DiaChi, String GioiTinh,
-                     String SDT, String SoCMT, String TinhTrangTaiChinh,
-                     String LichHoc, String LichThi, double GPA,
-                     String TinhTrangSucKheo, String SoMuiVaccin, String F){
-        super(HoTen, Tuoi, DiaChi, GioiTinh, SDT, SoCMT);
+    // constructor nhieu doi
+    public SinhVien(String Id, String SoCMT, String Matkhau, String HoTen, String GioiTinh, String DiaChi,
+                    String Tuoi, String SDT, double GPA,
+                    String TinhTrangTaiChinh, String LichHoc, String LichThi, String TinhTrangSucKheo, String SoMuiVaccin, String F) {
         this.Id = Id;
-        this.Matkhau=Matkhau;
-        this.TinhTrangTaiChinh = TinhTrangTaiChinh;
-        this.LichHoc = LichHoc;
-        this.LichThi = LichThi;
+        this.SoCMT = SoCMT;
+        this.Matkhau = Matkhau;
+        this.HoTen = HoTen;
+        this.GioiTinh = GioiTinh;
+        this.DiaChi = DiaChi;
+        this.Tuoi = Tuoi;
+        this.SDT = SDT;
         this.GPA = GPA;
         this.TinhTrangSucKheo = TinhTrangSucKheo;
+        this.TinhTrangTaiChinh = TinhTrangTaiChinh;
+        this.LichThi = LichThi;
+        this.LichHoc = LichHoc;
         this.SoMuiVaccin = SoMuiVaccin;
         this.F = F;
+
     }
 
+    // constructor swap thong tin 2 doi tuong
     public SinhVien(SinhVien a) {
         super(a);
         this.Id = a.Id;
-        this.Matkhau=Matkhau;
+        this.Matkhau = Matkhau;
         this.TinhTrangTaiChinh = a.TinhTrangTaiChinh;
         this.LichHoc = a.LichHoc;
         this.LichThi = a.LichThi;
@@ -59,6 +55,8 @@ public class SinhVien extends Nguoi implements Regex_taikhoan{
         this.F = a.F;
     }
 
+    // setter, getter
+
     public String getId() {
         return this.Id;
     }
@@ -66,6 +64,7 @@ public class SinhVien extends Nguoi implements Regex_taikhoan{
     public void setId(String Id) {
         this.Id = Id;
     }
+
     public String getMatkhau() {
         return this.Matkhau;
     }
@@ -73,6 +72,7 @@ public class SinhVien extends Nguoi implements Regex_taikhoan{
     public void setMatkhau(String Matkhau) {
         this.Matkhau = Matkhau;
     }
+
     public String getTinhTrangTaiChinh() {
         return this.TinhTrangTaiChinh;
     }
@@ -129,62 +129,47 @@ public class SinhVien extends Nguoi implements Regex_taikhoan{
         this.F = F;
     }
 
+    // to string
     @Override
     public String toString() {
-
-        return  " Id='" + getId() + "'" +" Matkhau='" + getMatkhau() + "'" + ", TinhTrangTaiChinh='" + getTinhTrangTaiChinh()
-                + "'" + ", LichHoc='" + getLichHoc() + "'" + ", LichThi='" + getLichThi()
-                + "'" + ", GPA='" + getGPA() + "\n'" + ", TinhTrangSucKheo='" + getTinhTrangSucKheo() + "'"
-                + ", SoMuiVaccin='"
-                + getSoMuiVaccin() + "'" + ", F='" + getF() + "'" +  super.toString() ;
+        return "SinhVien{" +
+                "HoTen='" + HoTen + '\'' +
+                ", Tuoi='" + Tuoi + '\'' +
+                ", DiaChi='" + DiaChi + '\'' +
+                ", GioiTinh='" + GioiTinh + '\'' +
+                ", SDT='" + SDT + '\'' +
+                ", SoCMT='" + SoCMT + '\'' +
+                ", Id='" + Id + '\'' +
+                ", Matkhau='" + Matkhau + '\'' +
+                ", TinhTrangTaiChinh='" + TinhTrangTaiChinh + '\'' +
+                ", LichHoc='" + LichHoc + '\'' +
+                ", LichThi='" + LichThi + '\'' +
+                ", GPA=" + GPA +
+                ", TinhTrangSucKheo='" + TinhTrangSucKheo + '\'' +
+                ", SoMuiVaccin='" + SoMuiVaccin + '\'' +
+                ", F='" + F + '\'' +
+                '}';
     }
 
+    // chuan hoa du lieu truyen vao file
     public String toStringFile() {
-        return Id+"-"+Matkhau+ "-" + LichThi + "-" + LichHoc + "-"
-        + TinhTrangTaiChinh + "-" + GPA + "-"
-        + SoMuiVaccin + "-" + TinhTrangSucKheo + "-" + F+"-"+super.toStringFile();
-        // return super.toStringFile() + "-" + Id + "-" + LichThi + "-" + LichHoc + "-"
-        //         + TinhTrangTaiChinh + "-" + GPA + "-"
-        //         + SoMuiVaccin + "-" + TinhTrangSucKheo + "-" + F;
+        return Id + "//" + SoCMT + "//" + Matkhau + "//" + HoTen + "//" + GioiTinh + "//" + DiaChi + "//" + Tuoi + "//" + SDT + "//" + GPA + "//" + TinhTrangTaiChinh + "//" +
+                LichHoc + "//" + LichThi + "//" + TinhTrangSucKheo + "//" + SoMuiVaccin + "//" + F;
     }
 
-    public void NhapSinhVien() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Nhap Id: ");
-        Id = sc.nextLine();
-        System.out.println("Nhap Matkhau: ");
-        Matkhau = sc.nextLine();
-        System.out.println("Nhap TinhTrangTaiChinh: ");
-        TinhTrangTaiChinh = sc.nextLine();
-        System.out.println("Nhap LichHoc: ");
-        LichHoc = sc.nextLine();
-        System.out.println("Nhap LichThi: ");
-        LichThi = sc.nextLine();
-        System.out.println("Nhap GPA: ");
-        GPA = sc.nextDouble();
-        sc.nextLine();
-        super.NhapNguoi();
-    }
-
+    // khai bao y te
     public void KhaiBaoYTe() {
         Scanner sc = new Scanner(System.in);
         System.out.println("---------KHai Bao Y Te---------");
-        System.out.println("Tinh Trang Suc Kheo (Om,Ho,CamLanh,DauDau,....,Tot) ?");
-        // TinhTrangSucKheo = sc.nextLine();
+        System.out.println("Tinh Trang Suc Kheo (XAU|TOT|KHEO) ?");
         setTinhTrangSucKheo(sc.nextLine());
         System.out.println("Ban Da Tiem May Mui Vaccin ? ");
-        // SoMuiVaccin = sc.nextLine();
         setSoMuiVaccin(sc.nextLine());
         System.out.println("Ban La F May(F1,F2,F3,...) ?");
         setF(sc.nextLine());
     }
 
-    public void OutPutsinhvien() {
-
-    }
-
-    /// -MODIFER sinhvien
-    // change all information
+    // thay doi thong tin cu the cua sinh vien
     public void ThayDoiThongTinCuThe(Scanner sc) {
         int x1 = 1;
 
@@ -194,56 +179,115 @@ public class SinhVien extends Nguoi implements Regex_taikhoan{
             int x = sc.nextInt();
             sc.nextLine();
             switch (x) {
-                // sc.nextLine();
                 case 1: {
                     System.out.println("1.Nhap Tinh Trang Suc Kheo: ");
-
                     setTinhTrangSucKheo(sc.nextLine());
+                    System.out.println("THAY DOI THANH CONG");
+                    try {
+                        System.in.read();
+                    }
+                    catch (IOException e){
+                        e.printStackTrace();
+                    }
                     break;
                 }
                 case 2: {
                     System.out.println("2.Nhap So Mui Vacci Da Tiem: ");
                     setSoMuiVaccin(sc.nextLine());
+                    System.out.println("THAY DOI THANH CONG");
+                    try {
+                        System.in.read();
+                    }
+                    catch (IOException e){
+                        e.printStackTrace();
+                    }
                     break;
                 }
                 case 3: {
                     System.out.println("3.Nhap F: ");
                     setF(sc.nextLine());
-                    break;
+                    System.out.println("THAY DOI THANH CONG");
+                    try {
+                        System.in.read();
+                    }
+                    catch (IOException e){
+                        e.printStackTrace();
+                    }  break;
                 }
                 case 4: {
                     System.out.println("4.Nhap Ho Ten: ");
                     setHoTen(sc.nextLine());
-                    break;
+                    System.out.println("THAY DOI THANH CONG");
+                    try {
+                        System.in.read();
+                    }
+                    catch (IOException e){
+                        e.printStackTrace();
+                    }  break;
                 }
                 case 5: {
                     System.out.println("5.Nhap Tuoi: ");
                     setTuoi(sc.nextLine());
-                    break;
+                    System.out.println("THAY DOI THANH CONG");
+                    try {
+                        System.in.read();
+                    }
+                    catch (IOException e){
+                        e.printStackTrace();
+                    } break;
                 }
                 case 6: {
                     System.out.println("6.Nhap Dia Chi: ");
                     setDiaChi(sc.nextLine());
-                    break;
+                    System.out.println("THAY DOI THANH CONG");
+                    try {
+                        System.in.read();
+                    }
+                    catch (IOException e){
+                        e.printStackTrace();
+                    }    break;
                 }
                 case 7: {
                     System.out.println("7.Nhap Gioi Tinh: ");
                     setGioiTinh(sc.nextLine());
-                    break;
+                    System.out.println("THAY DOI THANH CONG");
+                    try {
+                        System.in.read();
+                    }
+                    catch (IOException e){
+                        e.printStackTrace();
+                    }   break;
                 }
                 case 8: {
                     System.out.println("8.Nhap SDT: ");
                     setSDT(sc.nextLine());
-                    break;
+                    System.out.println("THAY DOI THANH CONG");
+                    try {
+                        System.in.read();
+                    }
+                    catch (IOException e){
+                        e.printStackTrace();
+                    }    break;
                 }
                 case 9: {
-                    System.out.println("9.Nhap So CMT: ");
-                    setSoCMT(sc.nextLine());
+                    System.out.println("KHONG DUOC PHEP THAY DOI CMT");
+                    try {
+                        System.in.read();
+                    }
+                    catch (IOException e){
+                        e.printStackTrace();
+                    }
                     break;
                 }
                 case 10: {
                     System.out.println("10.Nhap Tinh Trang Tai Chinh: ");
                     setTinhTrangTaiChinh(sc.nextLine());
+                    try {
+                        System.in.read();
+                    }
+                    catch (IOException e){
+                        e.printStackTrace();
+                    }
                     break;
                 }
                 case 11: {
@@ -272,12 +316,12 @@ public class SinhVien extends Nguoi implements Regex_taikhoan{
         System.out.println("10.Thay Doi Tinh Trang Tai Chinh: ");
         System.out.println("11.Thoat Chuong Trinh: ");
     }
-    // khai bao y te
 
+    //swap thong tin 2 sinh vien
     public void SetTatCaThongTingNguoi(SinhVien a) {
         super.SetTatCaThongTingNguoi(a);
         this.Id = a.Id;
-        this.Matkhau=a.Matkhau; 
+        this.Matkhau = a.Matkhau;
         this.TinhTrangTaiChinh = a.TinhTrangTaiChinh;
         this.LichHoc = a.LichHoc;
         this.LichThi = a.LichThi;
@@ -290,17 +334,29 @@ public class SinhVien extends Nguoi implements Regex_taikhoan{
 
     // xem lich hoc
     public void CheckLichHoc() {
-        System.out.println("----------Your Schedule SubJect----------");
+        System.out.println("----------LICH HOC----------");
         System.out.println(getLichHoc());
+        try {
+            System.in.read();
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
     // xem lich thi
     public void CheckLichThi() {
-        System.out.println("----------Your Schedule Exam----------");
+        System.out.println("----------LICH THI----------");
         System.out.println(getLichThi());
+        try {
+            System.in.read();
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
-    // doong hoc phi
+    // dong hoc phi
     public void DongHoc(Scanner sc) {
         String s = getTinhTrangTaiChinh();
         String result = "";
@@ -311,6 +367,12 @@ public class SinhVien extends Nguoi implements Regex_taikhoan{
         }
         if (result.isEmpty()) {
             System.out.println("Dong Du Hoc Phi");
+            try{
+                System.in.read();
+            }
+            catch (IOException e){
+                e.printStackTrace();
+            }
             return;
         }
         result = result.trim();
@@ -319,10 +381,16 @@ public class SinhVien extends Nguoi implements Regex_taikhoan{
 
         if (DebtFee == 0) {
             System.out.println("Dong Du Hoc Phi");
+            try{
+                System.in.read();
+            }
+            catch (IOException e){
+                e.printStackTrace();
+            }
             return;
         }
-        System.out.println("Your Fee Debt :" + DebtFee);
-        System.out.println("Nhap your money");
+        System.out.println("Thieu:" + DebtFee);
+        System.out.println("Nhap so tien muon dong: ");
         double x = sc.nextDouble();
         DebtFee = DebtFee - x;
         if (DebtFee > 0) {
@@ -335,44 +403,179 @@ public class SinhVien extends Nguoi implements Regex_taikhoan{
             setTinhTrangTaiChinh("Dong Du Hoc Phi");
 
         }
+        try{
+            System.in.read();
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
-    // change heath status
-    public void ThayDoiTinhTrangSucKheo(String TinhTrangSucKheo, String SoMuiVaccin, String F) {
-        this.TinhTrangSucKheo = TinhTrangSucKheo;
-        this.SoMuiVaccin = SoMuiVaccin;
-        this.F = F;
-    }
-
-    //xem thong tin sinh vien
+    // xem thong tin sinh vien
     public void XemThongTin() {
         System.out.println("----------Thong Tin Cua Sinh Vien La----------");
-        super.XemThongTin();
-        System.out.printf("ID:%-16s MATKHAU:%-10s GPA:%-3f LICHHOC:%-20s LICHTHI:%-16s TINHTRANGTAICHINH:%-20s\n", Id,Matkhau, GPA, LichHoc,
-                LichThi, TinhTrangTaiChinh);
-        System.out.printf("TINHTRANGSUCKHEO:%-10s SOMUIVACINATE:%-5s SOMUIDATIEM:%-10s\n", TinhTrangSucKheo,
-                SoMuiVaccin, F);
+        System.out.println(toString());
+        try {
+            System.in.read();
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
-    public void CheckGPA() {
+    //kiem tra diem GPA
+    public void KiemtraGpa() {
         System.out.println("Diem GPA Cua Ban: " + GPA);
+        try {
+            System.in.read();
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
     }
-    
+
+    // phan regex
     // regex_account
     @Override
-    public void regex_cmt() {
-        
+    public boolean regex_cmt(String cmt) {
+        String regex_cmt = "^[0-9]{12}$";
+        if (cmt.matches(regex_cmt))
+            return true;
+        return false;
     }
+
+    // regex -id
     @Override
-    public void regex_id() {
-        
+    public boolean regex_id(String id) {
+        String regex_id = "^20(21|20|19|18)[0-9]{6}";
+        if (id.matches(regex_id))
+            return true;
+        return false;
     }
+
+    // regex- mat khau
     @Override
-    public void regex_matkhau() {
-        
+    public boolean regex_matkhau(String matkhau) {
+        // At least 8 chars
+        // Contains at least one digit
+        // Contains at least one lower alpha char and one upper alpha char
+        // Contains at least one char within a set of special chars (@#%$^ etc.)
+        // Does not contain space, tab, etc.
+        String regex_matkhau = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!]).{8,}$";
+        if (matkhau.matches(regex_matkhau))
+            return true;
+        return false;
     }
+
+    // regex sdt
     @Override
-    public void regex_sdt() {
-        
+    public boolean regex_sdt(String sdt) {
+        String regex_std = "^0[0-9]{9}$";
+        if (sdt.matches(regex_std))
+            return true;
+        return false;
+    }
+
+    // regex F
+    @Override
+    public boolean regex_F(String f) {
+        // TODO Auto-generated method stub
+        String regex_f = "^(F0|F1|F2|F3|F4|NONE)$";
+        if (f.matches(regex_f)) return true;
+        return true;
+    }
+
+    // regex_GPA
+    @Override
+    public boolean regex_GPA(double gpa) {
+        String regex_gpa = "^[0-9]+.[0-9]+$";
+        String newgpa = String.valueOf(gpa);
+        if (newgpa.matches(regex_gpa))
+            return true;
+        return false;
+    }
+
+    //regex dia chi
+    @Override
+    public boolean regex_diachi(String diachi) {
+        String regex_diachi = "^.{4,}$";
+        if (diachi.matches(regex_diachi))
+            return true;
+        return false;
+    }
+
+    // regex gioi tinh
+    @Override
+    public boolean regex_gioitinh(String gioitinh) {
+        // TODO Auto-generated method stub
+        String regex_gioitinh = "^(NAM|NU|THUBA)$";
+        if (gioitinh.matches(regex_gioitinh))
+            return true;
+        return false;
+    }
+
+    // regex ho ten
+    @Override
+    public boolean regex_hoten(String hoten) {
+        String regex_hoten = "^([A-Z ]+)+$";
+        if (hoten.matches(regex_hoten))
+            return true;
+        return false;
+    }
+
+    // regex lich hoc
+    @Override
+    public boolean regex_lichhoc(String lichhoc) {
+        // TODO Auto-generated method stub
+        return true;
+    }
+
+    // regex lich thi
+    @Override
+    public boolean regex_lichthi(String lichthi) {
+        // TODO Auto-generated method stub
+        return true;
+    }
+
+    //re gex so mui vacxin
+    @Override
+    public boolean regex_somuivaccin(String s) {
+        // TODO Auto-generated method stub\
+        try {
+            int somui = Integer.parseInt(s);
+            return true;
+        } catch (Exception e) {
+            // TODO: handle exception
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    // regex tinh trang suc kheo
+    @Override
+    public boolean regex_tinhtrangsuckhoe(String s) {
+        // TODO Auto-generated method stub
+        String regex_tinhtrang = "^(TOT|XAU|NHIEMCOVID)$";
+        if (s.matches(regex_tinhtrang))
+            return true;
+        return false;
+    }
+
+    // regex tuoi
+    @Override
+    public boolean regex_tuoi(String tuoi) {
+        // TODO Auto-generated method stub
+        String regex_tuoi = "^[0-9]{1,2}$";
+        if (tuoi.matches(regex_tuoi))
+            return true;
+        return false;
+    }
+
+    // regex tai chinh
+    @Override
+    public boolean regex_taichinh(String taichinh) {
+        String regex_taichinh = "thieu: (0|[0-9]+)";
+        if (taichinh.matches(regex_taichinh)) return true;
+        return true;
     }
 }

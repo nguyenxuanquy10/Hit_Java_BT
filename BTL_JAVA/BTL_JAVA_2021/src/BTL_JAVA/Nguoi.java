@@ -1,7 +1,7 @@
 package BTL_JAVA;
 
 import java.util.Scanner;
-
+import java.util.*;
 public class Nguoi {
     protected String HoTen;
     protected String Tuoi;
@@ -111,9 +111,7 @@ public class Nguoi {
         System.out.printf("HoTen:%-15s Tuoi:%-6s DiaChi:%-8s GioiTinh:%-6s SDT:%-15s SOCMT:%-8s\n", HoTen, Tuoi, DiaChi, GioiTinh, SDT, SoCMT);
     }
 
-    public String toStringFile() {
-        return HoTen + "-" + Tuoi + "-" + GioiTinh + "-" + DiaChi + "-" + SDT + "-" + SoCMT;
-    }
+
 // xem thogn tin 
     // public void XemThongTin(){
     //     System.out.printf("HoTen:");
